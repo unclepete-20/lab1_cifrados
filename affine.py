@@ -17,12 +17,12 @@ def affine_decrypt(ciphertext, key):
         return "Clave 'a' no válida. No tiene inverso modular."
     return ''.join([chr(((a_inv * (ord(char) - ord('A') - b)) % 27) + ord('A')) if char.isalpha() else char for char in ciphertext.upper()])
 
-# Prueba del cifrado afín
+# Affine encryption test
 plaintext_afin = 'HELLOWORLD! 123'
 key_afin = (5, 8)
 encrypted_afin = affine_encrypt(plaintext_afin, key_afin)
 print("Texto cifrado con cifrado afín:", encrypted_afin)
 
-# Prueba del descifrado afín
+# Affine decryption test
 decrypted_afin = affine_decrypt(encrypted_afin, key_afin)
 print("Texto descifrado con cifrado afín:", decrypted_afin)

@@ -15,19 +15,19 @@ def caesar_decrypt(cyphered_text, displacement):
     alphabet = list(string.ascii_uppercase) + ['Ñ']
     return ''.join([alphabet[(alphabet.index(char) - displacement) % 27] if char in alphabet else char for char in cyphered_text])
 
-# Texto plano original
+# Original plain text
 text_test = 'HELLOWY! HOLA7'
-# Desplazamiento para el cifrado César
+# Caesar cipher displacement
 displacement_test = 3
 
-# Cifrado del texto plano utilizando el cifrado César
+# Caesar cipher encryption of the original plain text
 new_text = caesar_encrypt(text_test, displacement_test)
 print("Texto cifrado con cifrado César:", new_text)
 
-# Texto cifrado esperado
+# Expected ciphered text
 cyphered_expected = 'KHÑÑRZB! KRÑD7'
 
-# Descifrado del texto cifrado utilizando el cifrado César
+# Decryption of the ciphered text using Caesar cipher
 decyphered = caesar_decrypt(cyphered_expected, displacement_test)
 print("Texto descifrado con cifrado César:", decyphered)
 
